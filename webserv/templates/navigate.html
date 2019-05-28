@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="./" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="123" />
+        <button>Go to user 123</button>
+    </form>
+</body>
+</html>

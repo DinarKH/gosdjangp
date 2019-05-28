@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{%static 'regstyle.css'%}" type="text/css">
+</head>
+<body>
+
+<div class="form">
+    <h2>Введите данные:</h2>
+    <div th:if="${error}" class="error">
+        <h4 th:text="${error}"/>
+    </div>
+    <form action="#" th:action="@{/}" method="post">
+        {% csrf_token %}
+        {% for el in form %}
+            {{el.label}}
+          <p>{{el}}</p>
+        {% endfor %}
+
+        <p><input type="submit" value="Отправить"></p>
+    </form>
+</div>
+</body>
+</html>
